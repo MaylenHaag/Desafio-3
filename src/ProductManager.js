@@ -1,4 +1,4 @@
-const fs = require('fs')
+import fs from 'fs';
 
 class ProductManager {
     #path
@@ -74,7 +74,7 @@ class ProductManager {
         let product = products.find(item => item.id === id)
 
         if (!product) {
-            return 'Id no encontrado.'
+            return { error: 'Producto no encontrado.' }
         }
 
         return product
@@ -141,4 +141,4 @@ class ProductManager {
     }
 }
 
-module.exports = ProductManager
+export default ProductManager
